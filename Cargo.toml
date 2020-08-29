@@ -1,0 +1,8 @@
+[package]
+name = "team_type_optimizer"
+version = "0.1.0"
+authors = ["Richard McCormack <brick@brick.codes>"]
+edition = "2018"
+
+[dependencies]
+itertools = "0.8"
