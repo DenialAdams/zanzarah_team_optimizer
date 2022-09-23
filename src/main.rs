@@ -31,7 +31,7 @@ impl Type {
             Type::Fire => &[Type::Nature, Type::Air, Type::Ice, Type::Chaos],
             Type::Dark => &[Type::Air, Type::Psi, Type::Stone, Type::Fire],
             Type::Chaos => &[Type::Water, Type::Psi],
-            Type::Metal => &[Type::Nature, Type::Psi, Type::Fire],
+            Type::Metal => &[Type::Nature, Type::Psi, Type::Fire, Type::Light],
         }
     }
 
@@ -74,7 +74,7 @@ impl Type {
             Type::Nature => &[Type::Ice, Type::Fire, Type::Metal],
             Type::Air => &[Type::Stone, Type::Ice, Type::Fire, Type::Dark],
             Type::Water => &[Type::Air, Type::Energy, Type::Ice, Type::Chaos],
-            Type::Light => &[Type::Psi],
+            Type::Light => &[Type::Psi, Type::Metal],
             Type::Energy => &[Type::Stone, Type::Ice],
             Type::Psi => &[Type::Nature, Type::Air, Type::Energy, Type::Dark, Type::Chaos, Type::Metal],
             Type::Stone => &[Type::Light, Type::Psi, Type::Dark],
@@ -116,7 +116,7 @@ fn main() {
         ineffective_against_spread[combo_ineffective_against.len()] += 1;
         resilient_to_spread[combo_resilient_to.len()] += 1;
         weak_to_spread[combo_weak_to.len()] += 1;
-        if combo_effective_against.len() == 7 {
+        if combo_effective_against.len() == 12 {
             println!("{:?} - Weaknesses: {}", combination, combo_weak_to.len());
         }
         if combo_weak_to.len() == 6 {
